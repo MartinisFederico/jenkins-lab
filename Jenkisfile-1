@@ -1,0 +1,16 @@
+pipeline{
+    agent{
+        docker {image 'ubuntu'}
+    }
+    
+    stages{
+        stage('InContainer'){
+            steps{
+                echo 'Ciao sono in Docker'
+                sh 'hostname'
+                sh 'whoami'
+            }
+        }
+    }
+    
+}

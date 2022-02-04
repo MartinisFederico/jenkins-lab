@@ -8,7 +8,6 @@ pipeline{
             steps{
                 echo 'Ciao sono in Docker'
                 sh 'hostname'
-                sh 'whoami'
             }
         }
     }

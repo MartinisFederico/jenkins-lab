@@ -1,0 +1,14 @@
+pipeline{
+    agent{
+        docker { image 'python' }
+    }
+    stages{
+        stage('Test'){
+            steps{
+                #se la repository fosse privata qui dovrei mettere l'autenticazione di github
+                sh 'wget https://raw.githubusercontent.com/MartinisFederico/jenkins-lab/main/test.py'
+                sh 'python test.py'
+            }
+        }
+    }
+}

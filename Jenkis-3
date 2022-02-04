@@ -1,0 +1,14 @@
+pipeline{
+    agent{ dockerfile true }
+    
+    stages{
+        stage('InContainer'){
+            steps{
+                sh 'node --version'
+                sh 'git --version'
+                sh 'curl --version'
+            }
+        }
+    }
+    
+}
